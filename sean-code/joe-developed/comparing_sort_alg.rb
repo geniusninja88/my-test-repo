@@ -33,16 +33,20 @@ def bubble_sort(numbers)
 	for i in 0..(numbers.length - 2)
 		
 		for j in 0..(numbers.length-2-i)
-		
+			found_swap = false
 			compare_count += 1
+			
+			while found_swap == false
 			# Swap numbers if the second number is greater than the first
-			if numbers[j] > numbers[j+1]
-				temp = numbers[j+1]
-				numbers[j+1] = numbers[j]
-				numbers[j] = temp
-				swap_count += 1
+				if numbers[j] > numbers[j+1]
+					temp = numbers[j+1]
+					numbers[j+1] = numbers[j]
+					numbers[j] = temp
+					swap_count += 1
+					found_swap = true
+				end
 			end
-		end
+		end	
 	end
 
 	return compare_count, swap_count
